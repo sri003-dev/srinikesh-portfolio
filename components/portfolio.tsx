@@ -105,10 +105,11 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [skillGroup, setSkillGroup] = useState("All");
+  const [pendingSection, setPendingSection] = useState<string | null>(null);
   const filtered = skillGroup === "All" ? skills : skills.filter((s) => s.group === skillGroup);
 
   return (
-    <main className="min-h-screen overflow-hidden">
+    <main className="min-h-screen">
       <div className="pointer-events-none fixed inset-0 -z-10 grid-bg" />
       <div className="pointer-events-none fixed left-1/2 top-0 -z-10 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-lime-400/5 blur-[120px]" />
 
@@ -116,35 +117,52 @@ export default function Portfolio() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
           <a href="#home" className="font-mono text-sm font-bold tracking-tight">SL<span className="text-lime-300">.</span></a>
           <div className="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
-            {[["About","about"],["Experience","experience"],["Projects","projects"],["Skills","skills"],["Contact","contact"]].map(([label,id]) => (
-  <a
-    key={id}
-    href={`#${id}`}
-    onClick={(e) => {
-      e.preventDefault();
-      setMenuOpen(false);
-
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 100);
-    }}
-    className="border-b border-white/5 py-4 text-zinc-300"
-  >
-    {label}
-  </a>
-))}
-          </div>
+  {[["About","about"],["Experience","experience"],["Projects","projects"],["Skills","skills"],["Contact","contact"]].map(([label,id]) => (
+    <a
+      key={id}
+      href={`#${id}`}
+      className="transition hover:text-white"
+    >
+      {label}
+    </a>
+  ))}
+</div>
           <a href="mailto:srinikesh003@gmail.com" className="hidden rounded-full border border-lime-300/30 bg-lime-300/10 px-4 py-2 text-sm font-medium text-lime-200 transition hover:bg-lime-300/20 md:block">Let&apos;s talk</a>
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden" aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
         </nav>
         <AnimatePresence>
-          {menuOpen && <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} className="border-t border-white/5 md:hidden">
-            <div className="mx-auto flex max-w-6xl flex-col px-5 py-3">{[["About","about"],["Experience","experience"],["Projects","projects"],["Skills","skills"],["Contact","contact"]].map(([label,id]) => <a onClick={() => setMenuOpen(false)} key={id} href={`#${id}`} className="border-b border-white/5 py-4 text-zinc-300">{label}</a>)}</div>
-          </motion.div>}
-        </AnimatePresence>
+  {menuOpen && (
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: "auto", opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      className="border-t border-white/5 md:hidden"
+    >
+      <div className="mx-auto flex max-w-6xl flex-col px-5 py-3">
+        {[["About","about"],["Experience","experience"],["Projects","projects"],["Skills","skills"],["Contact","contact"]].map(([label, id]) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setMenuOpen(false);
+
+              setTimeout(() => {
+                document.getElementById(id)?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }, 300);
+            }}
+            className="border-b border-white/5 py-4 text-zinc-300"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
       </header>
 
       <section id="home" className="mx-auto flex min-h-screen max-w-6xl items-center px-5 pb-20 pt-32 lg:px-8">
