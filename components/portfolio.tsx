@@ -116,7 +116,26 @@ export default function Portfolio() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
           <a href="#home" className="font-mono text-sm font-bold tracking-tight">SL<span className="text-lime-300">.</span></a>
           <div className="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
-            {[["About","about"],["Experience","experience"],["Projects","projects"],["Skills","skills"],["Contact","contact"]].map(([label,id]) => <a key={id} href={`#${id}`} className="transition hover:text-white">{label}</a>)}
+            {[["About","about"],["Experience","experience"],["Projects","projects"],["Skills","skills"],["Contact","contact"]].map(([label,id]) => (
+  <a
+    key={id}
+    href={`#${id}`}
+    onClick={(e) => {
+      e.preventDefault();
+      setMenuOpen(false);
+
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }}
+    className="border-b border-white/5 py-4 text-zinc-300"
+  >
+    {label}
+  </a>
+))}
           </div>
           <a href="mailto:srinikesh003@gmail.com" className="hidden rounded-full border border-lime-300/30 bg-lime-300/10 px-4 py-2 text-sm font-medium text-lime-200 transition hover:bg-lime-300/20 md:block">Let&apos;s talk</a>
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden" aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
