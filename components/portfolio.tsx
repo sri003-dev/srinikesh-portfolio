@@ -43,12 +43,13 @@ const projects = [
     demo: "https://my-app-frontend-cdk5.onrender.com/",
   },
   {
-    title: "Smart Parking",
-    subtitle: "Computer Vision System",
-    description: "A real-time parking occupancy system using YOLOv8 and OpenCV, paired with a browser dashboard for live availability monitoring.",
-    tags: ["Python", "YOLOv8", "OpenCV", "HTML", "CSS", "JavaScript"],
+    title: "Job Application Tracker",
+    subtitle: "Full-Stack Job Search Management Platform",
+    description: "A full-stack job application tracker with a Kanban board for managing applications across hiring stages, featuring secure authentication, drag-and-drop reordering, MongoDB data management and responsive UI.",
+    tags: ["Next.js", "React", "TypeScript", "MongoDB", "Mongoose", "Better Auth", "Tailwind CSS", "dnd-kit"],
     accent: "cyan",
-    github: "https://github.com/sri003-dev/YOLO-ParkingManagement",
+    github: "https://github.com/sri003-dev/kanban-board",
+    demo: "https://kanban-board-cyan-eight.vercel.app/",
   },
   {
     title: "Financial Document AI",
@@ -59,12 +60,12 @@ const projects = [
     github: "https://github.com/sri003-dev/OCR-Bank-financial-documents",
   },
   {
-    title: "Portfolio",
-    subtitle: "Personal Developer Website",
-    description: "A responsive recruiter-focused portfolio showcasing my experience, projects and technical toolkit, with animations, SEO metadata and a downloadable resume.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion", "Vercel"],
+    title: "Smart Parking",
+    subtitle: "Computer Vision System",
+    description: "A real-time parking occupancy system using YOLOv8 and OpenCV, paired with a browser dashboard for live availability monitoring.",
+    tags: ["Python", "YOLOv8", "OpenCV", "HTML", "CSS", "JavaScript"],
     accent: "cyan",
-    github: "https://github.com/sri003-dev/srinikesh-portfolio",
+    github: "https://github.com/sri003-dev/YOLO-ParkingManagement",
   },
 ];
 
@@ -174,7 +175,7 @@ export default function Portfolio() {
             <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400 sm:text-xl">Aspiring Software Engineer building reliable applications with <span className="text-zinc-200">Java, JavaScript, React, Node.js</span> and strong foundations in <span className="text-zinc-200">DSA, OOP, SQL and REST APIs</span>.</p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-semibold text-black transition hover:bg-lime-200">View my work <ArrowUpRight size={16} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>
-              <a href="/Srinikesh_L_Resume.pdf" download className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"><ExternalLink size={16}/> Download Resume</a>
+              <a href="/Resume_Srinikesh_Dev_MERN.pdf" download className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"><ExternalLink size={16}/> Download Resume</a>
             </div>
             <div className="mt-10 flex items-center gap-5 text-zinc-500"><a href="https://github.com/sri003-dev" target="_blank" rel="noreferrer" className="transition hover:text-white"><Github size={20}/></a><a href="https://www.linkedin.com/in/srinikesh-l-a45b40279" target="_blank" rel="noreferrer" className="transition hover:text-white"><Linkedin size={20}/></a><span className="h-px w-16 bg-white/10"/><span className="font-mono text-xs">Salem, India</span></div>
           </motion.div>
@@ -229,7 +230,7 @@ export default function Portfolio() {
         <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="relative overflow-hidden rounded-[2rem] border border-lime-300/15 bg-lime-300/[.04] p-8 sm:p-12 lg:p-16">
           <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-lime-300/10 blur-3xl" />
           <p className="font-mono text-xs text-lime-300">05 / Contact</p><h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">Let&apos;s build something useful.</h2><p className="mt-5 max-w-xl leading-7 text-zinc-400">I&apos;m currently looking for software engineering opportunities where I can contribute, learn quickly and grow with a strong engineering team.</p>
-          <div className="mt-9 flex flex-wrap gap-3"><a href="mailto:srinikesh003@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-semibold text-black transition hover:bg-lime-200"><Mail size={17}/> srinikesh003@gmail.com</a><a href="/Srinikesh_L_Resume.pdf" download className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm font-semibold transition hover:bg-black/40"><ExternalLink size={17}/> Download Resume</a><a href="https://github.com/sri003-dev" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm font-semibold transition hover:bg-black/40"><Github size={17}/> GitHub</a><a href="https://www.linkedin.com/in/srinikesh-l-a45b40279" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm font-semibold transition hover:bg-black/40"><Linkedin size={17}/> LinkedIn</a></div>
+          <div className="mt-9 flex flex-wrap gap-3"><a href="mailto:srinikesh003@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-semibold text-black transition hover:bg-lime-200"><Mail size={17}/> srinikesh003@gmail.com</a><a href="/Resume_Srinikesh_Dev_MERN.pdf" download className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm font-semibold transition hover:bg-black/40"><ExternalLink size={17}/> Download Resume</a><a href="https://github.com/sri003-dev" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm font-semibold transition hover:bg-black/40"><Github size={17}/> GitHub</a><a href="https://www.linkedin.com/in/srinikesh-l-a45b40279" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm font-semibold transition hover:bg-black/40"><Linkedin size={17}/> LinkedIn</a></div>
         </motion.div>
       </section>
 
